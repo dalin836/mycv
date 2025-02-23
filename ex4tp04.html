@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Example</title>
+    <style>
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            background-color: #f0f0f0;
+        }
+        .wrapper {
+            width: 200px;
+            height: 200px;
+            background-color: lightgray;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 5px;
+        }
+        .box {
+            background-color: orange;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #fff;
+        }
+        
+        .inner-box {
+            background-color: steelblue;
+            width: 100%;
+            height: 30%;
+            display: flex;
+            margin: 2px;
+            border: 1px solid #fff;
+        }
+        /* First Layout */
+        .layout1 .box {
+            width: 30%;
+            height: 100%;
+        }
+        
+        /* Second Layout */
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: lightgray;
+            display: flex;
+            flex-direction: column;
+            padding: 5px;
+        }
+        .section {
+            background-color: orange;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #fff;
+        }
+
+        .middle {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .blue-box {
+            background-color: steelblue;
+            width: 30%;
+            height: 100%;
+            border: 1px solid #fff;
+        }
+        /* Third Layout */
+        .wrapper3 {
+            width: 200px;
+            height: 200px;
+            display: flex;
+            flex-wrap: wrap;
+            background-color: lightgray;
+        }
+        .box3 {
+            box-sizing: border-box;
+            border: 1px solid white;
+        }
+        .box3a {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+        }
+        .box3b {
+            width: 100px;
+            height: 50px;
+            background-color: orange;
+        }
+        .box3c {
+            width: 50px;
+            height: 50px;
+            background-color: orange;
+        }
+        .box3d {
+            width: 50px;
+            height: 100px;
+            background-color: blue;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="wrapper layout1">
+        <div class="box"></div>
+        <div class="box">
+            <div class="inner-box"></div>
+            <div class="inner-box"> </div>
+            <div class="inner-box"></div>
+        </div>
+        <div class="box"></div>
+    </div>
+
+    <div class="box2">
+        <div class="section"></div>
+        <div class="section middle">
+            <div class="blue-box"></div>
+            <div class="blue-box"></div>
+            <div class="blue-box"></div>
+        </div>
+        <div class="section"></div>
+    </div>
+
+    <div class="wrapper3">
+        <div class="box3 box3a"></div>
+        <div class="box3 box3b"></div>
+        <div class="box3 box3c"></div>
+        <div class="box3 box3c"></div>
+        <div class="box3 box3d"></div>
+    </div>
+       
+
+</body>
+</html>

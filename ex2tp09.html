@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .color {
+            width: 300px;
+            height: 500px;
+            text-align: center;
+            margin: 100px;
+            border: 3cm;
+            position: relative;
+        }
+        .h2 {
+            margin-bottom: 20px;
+        }
+        #color {
+            margin-top: 20px;
+        }
+        .tableColor {
+            margin-top: 20px;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+   <div class="color">
+        <div style="background-color: rgb(176, 209, 231);width: 290px; height: 50px; display: flex; justify-self: center;align-items: center; padding: 10px;">
+            <h2>Change background color</h2>
+        </div>
+        <div style="background-color: black;justify-content: center;align-items:center;">
+            <h2 class="h2" style="color: white;">Background Color</h2>
+            <h5 id="colorCode" style="color: white;">#000000</h5>
+        </div>
+        
+        <button onclick="changeColor()">GENERATE</button>
+        <button onclick="resetColor()">RESET</button>
+        <div id="color">
+            <p>Click the button to generate a random color and reset to the default color.</p>
+        </div>
+        <div class="tableColor" style="background-color: aliceblue; width: 190px;height: 500px;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Color Code</th>
+                        <th>Color</th>
+                    </tr>
+                </thead>
+                <tbody id="colorTableBody">
+                    <tr>
+                        <td>#000000</td>
+                        <td style="background-color: black; width: 20px;"></td>
+                    </tr>
+                </tbody>
+             </table>
+        </div>
+   </div> 
+
+   <script>
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        function changeColor() {
+            const newColor = getRandomColor();
+            document.body.style.backgroundColor = newColor;
+            document.getElementById('colorCode').innerText = newColor;
+            addColorToTable(newColor);
+        }
+
+        function resetColor() {
+            const defaultColor = '#FFFFFF';
+            document.body.style.backgroundColor = defaultColor;
+            document.getElementById('colorCode').innerText = defaultColor;
+            addColorToTable(defaultColor);
+        }
+
+        function addColorToTable(color) {
+            const tableBody = document.getElementById('colorTableBody');
+            const newRow = document.createElement('tr');
+            const cell1 = document.createElement('td');
+            const cell2 = document.createElement('td');
+            cell1.innerText = color;
+            cell2.style.backgroundColor = color;
+            cell2.style.width = '20px';
+            newRow.appendChild(cell1);
+            newRow.appendChild(cell2);
+            tableBody.appendChild(newRow);
+        }
+   </script>
+</body>
+</html>

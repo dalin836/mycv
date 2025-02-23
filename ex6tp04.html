@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Layout</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fff;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+
+        .wrapper {
+            width: 200px;
+            height: 200px;
+            background-color: lightgray;
+            position: relative;
+            display: flex;
+        }
+
+        .box1, .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            position: absolute;
+        }
+
+        /* Adjust positions based on reference image */
+        .box1 {
+            top: 30px;
+            left: -50px;
+        }
+
+        .box2 {
+            bottom: -50px;
+            left: 50px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="box1"></div>
+    </div>
+
+    <div class="wrapper">
+        <div class="box2"></div>
+    </div>
+
+</body>
+</html>

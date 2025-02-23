@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>input the number to sumlumation</h3>
+    <input type="number" name="num1">
+    <input type="number" name="num2">
+        
+
+  
+    <p id="result"></p>
+    <button type="button" onclick="sumNumbers()">result</button>
+
+    <script>
+        function sumNumbers() {
+            // convert number to string
+            var num1 = parseFloat(document.getElementsByName("num1")[0].value);
+            var num2 = parseFloat(document.getElementsByName("num2")[0].value);
+            var sum = num1 + num2;
+        
+            // display the result in paragraph tag with id "result"  
+            document.getElementById("result").innerHTML = "The sum is: " + sum;
+        }
+    </script>
+</body>
+</html>

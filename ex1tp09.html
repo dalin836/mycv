@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex1</title>
+    <style>
+        .box{
+            width: 500px;
+            height: 500px;
+            background-color:wheat;
+            margin: 100px;
+            transition: background-color 1s;
+            position: relative;
+        }
+        .counter {
+            font-size: 50px;
+            font-weight: bold;
+            color: rgb(32, 207, 199);
+            transition: color 1s;
+            top: 50px;
+            left: 150px;
+            position: relative;
+        }
+        .Counter {
+            font-size: 100px;
+            font-weight: bold;
+            color: rgb(32, 207, 199);
+            transition: color 0.5s;
+            top: 0px;
+            left: 200px;
+            position: relative;
+        }
+        .button1{
+            margin-top: 0px;
+            padding: 10px;
+            background-color: rgb(170, 221, 219);
+            color: white;
+            left: 20%;
+            position: relative;
+        }
+        .button2{
+            margin-top: 0px;
+            padding: 10px;
+            background-color: rgb(170, 221, 219);
+            color: white;
+            left: 30%;
+            position: relative;
+        }
+        .button3{
+            margin-top: 0px;
+            padding: 10px;
+            background-color: rgb(170, 221, 219);
+            color: white;
+            left: 35%;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1 class="counter">Counter</h1>
+        <h2 class="Counter">7</h2>
+        <button class="button1" type="button" onclick="counter.decrease()">DECREASE</button>
+        <button class="button2" type="button" onclick="counter.reset()">RESET</button>
+        <button class="button3" type="button" onclick="counter.increase()">INCREASE</button>
+
+         <script>
+             class Counter {
+                constructor() {
+                    this.number = 0;
+                    this.updateDisplay();
+                }
+
+                 updateDisplay() {
+                    document.querySelector('.Counter').textContent = this.number;
+                    if (this.number % 2 === 0) {
+                        document.querySelector('.Counter').style.color = 'green';
+                    } else {
+                        document.querySelector('.Counter').style.color = 'red';
+                    }
+                }
+
+                decrease() {
+                    // to nu
+                    this.number--;
+                    this.updateDisplay();
+                }
+
+                increase() {
+                    this.number++;
+                    this.updateDisplay();
+                }
+
+                reset() {
+                    this.number = 0;
+                    this.updateDisplay();
+                }
+            }
+
+            const counter = new Counter();
+        </script>
+    </div>
+</body>
+</html>
